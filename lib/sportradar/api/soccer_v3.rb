@@ -145,14 +145,14 @@ module Sportradar
       #   end
       # end
 
-      # def team_standings
-      #   response = get request_url('teams/standing')
-      #   if response.success?
-      #     Sportradar::Api::SoccerV3::Standing.new response['standings']
-      #   else
-      #     response
-      #   end
-      # end
+      def team_standings
+        response = get request_url('teams/standing')
+        if response.success?
+          Sportradar::Api::SoccerV3::Standing.new response['standings']
+        else
+          response
+        end
+      end
 
       def simulation_match
         '22653ed5-0b2c-4e30-b10c-c6d51619b52b'
